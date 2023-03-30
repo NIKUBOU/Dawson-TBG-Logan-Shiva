@@ -10,10 +10,9 @@ public class LoadNextScene : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
         var player = collision.GetComponent<Unit>();
-        if (player == null)
+        if (player == null || player.IsEnemy())
             return;
 
-        //Add Coroutine to animate Flag before loading next scene
         StartCoroutine(LoadAfterDelay());
     }
 
