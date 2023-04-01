@@ -156,7 +156,7 @@ public class Unit : MonoBehaviour
     {
         if (isEnemy)
         {
-            GameManager.Instance.Score += 100;
+            GameManager.Instance.Score += 1;
         }
         else
         {
