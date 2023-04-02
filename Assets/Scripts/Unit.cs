@@ -163,5 +163,4 @@ public class Unit : MonoBehaviour
             GameManager.Instance.Deaths += 1;
         }
     }
-
 }

@@ -60,7 +60,7 @@ public class UnitManager : MonoBehaviour
             // VICTORY
             if(enemyUnitList.Count == 0)
             {
-                Debug.Log("YOU WIN!");
+                GameManager.Instance.TriggerGameWon();
             }
 
         }
@@ -68,11 +68,10 @@ public class UnitManager : MonoBehaviour
         {
             friendlyUnitList.Remove(unit);
             // DEFEAT
-             if(friendlyUnitList.Count == 0)
+            if(friendlyUnitList.Count == 0)
             {
-                Debug.Log("GAME OVER!");
+                GameManager.Instance.TriggerGameOver();
             }
-            
         }
     }
 

@@ -14,13 +14,23 @@ public class GameManager : MonoBehaviour
 
     private static GameManager instance;
 
+    private Menu menu;
+
     private int deaths;
 
     private int score = 0;
 
+    private bool gameStart = false;
+
+    private bool gameWon = false;
+
     public int Deaths { get { return deaths; } set { deaths = value; } }
 
     public int Score { get { return score; } set { score = value; } }
+
+    public bool GameStart { get { return gameStart; } set { gameStart = value; } }
+
+    public bool GameWon { get { return gameWon; } set { gameWon = value; } }
 
     public float CurrentTimer
     {
@@ -37,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        menu = FindObjectOfType<Menu>();
         deaths = 0;
     }
 
@@ -54,11 +65,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Timer();
+        if (gameStart)
+        {
+            Timer();
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            LoadNext();
+            TriggerGameWon();
         }
     }
 
@@ -77,10 +91,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GoBackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        gameStart = false;
+        score = 0;
+        deaths = 0;
+        currentTimer = 0;
+    }
+
     public void TriggerGameOver()
     {
-        //canvasMenu.OpenDeathUI();
+        gameStart = false;
+        menu.OpenDeathUI();
         score = previousScore;
-        deaths++;
+    }
+
+    public void TriggerGameWon()
+    {
+        gameStart = false;
+        menu.OpenWonUI();
     }
 }

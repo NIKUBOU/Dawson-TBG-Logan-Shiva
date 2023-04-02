@@ -18,8 +18,8 @@ public class Scoreboard : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-        textField.text ="TIME: " + GameManager.Instance.CurrentTimer.ToString("f2") +
-                        "     ENEMY KIA: " + GameManager.Instance.Score + 
+        textField.text = "TIME: " + GameManager.Instance.CurrentTimer.ToString("f2") +
+                        "     ENEMY KIA: " + GameManager.Instance.Score +
                         "     DEATHS: " + GameManager.Instance.Deaths;
     }
 }

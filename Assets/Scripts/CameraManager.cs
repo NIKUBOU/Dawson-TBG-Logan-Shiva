@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ public class CameraManager : MonoBehaviour
     {
         switch (sender)
         {
+
             case ShootAction shootAction:
                 Unit shooterUnit = shootAction.GetUnit();
                 Unit targetUnit = shootAction.GetTargetUnit();
@@ -46,6 +48,11 @@ public class CameraManager : MonoBehaviour
 
                 Vector3 actionCameraPosition = shooterUnit.GetWorldPosition() + cameraCharacterHeight + shoulderOffset + (shootDir * -1);
                 
+                if (actionCameraGameObject == null)
+                {
+                    actionCameraGameObject = FindObjectOfType<ActionVCAMRelay>().ActionVCAM;
+                }
+
                 actionCameraGameObject.transform.position = actionCameraPosition;
                 actionCameraGameObject.transform.LookAt(targetUnit.GetWorldPosition() + cameraCharacterHeight);
 
