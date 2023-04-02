@@ -97,6 +97,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ReloadScene()
+    {
+        score = previousScore;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void GoBackToMainMenu()
     {
         SceneManager.LoadScene(0);

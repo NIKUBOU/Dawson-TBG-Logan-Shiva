@@ -83,6 +83,11 @@ public class Menu : MonoBehaviour
         GameManager.Instance.LoadNext();
     }
 
+    public void Respawn()
+    {
+        GameManager.Instance.ReloadScene();
+    }
+
     public void MainMenu()
     {
         GameManager.Instance.GoBackToMainMenu();
