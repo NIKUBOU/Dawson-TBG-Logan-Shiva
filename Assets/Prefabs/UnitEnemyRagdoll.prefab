@@ -10,9 +10,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7645719776375695262, guid: 0010de8563ac28b469a8c093d773694d,
         type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: a9ea625416d285349a021e7ce7dffab1, type: 3}
+    - target: {fileID: 7645719776375695262, guid: 0010de8563ac28b469a8c093d773694d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c70e075a2144ba04784d74b7b2889fd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 22af96f9ba68eb54b9ce79bdf6661284, type: 2}
     - target: {fileID: 7778356289471033336, guid: 0010de8563ac28b469a8c093d773694d,
         type: 3}
       propertyPath: m_Name
