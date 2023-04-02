@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        menu = FindObjectOfType<Menu>();
+        FindMenu();
         deaths = 0;
     }
 
@@ -74,6 +74,11 @@ public class GameManager : MonoBehaviour
         {
             TriggerGameWon();
         }
+
+        if (menu == null)
+        {
+            FindMenu();
+        }
     }
 
     void Timer()
@@ -88,6 +93,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCount)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
         }
     }
 
@@ -111,5 +117,10 @@ public class GameManager : MonoBehaviour
     {
         gameStart = false;
         menu.OpenWonUI();
+    }
+
+    private void FindMenu()
+    {
+        menu = FindObjectOfType<Menu>();
     }
 }
