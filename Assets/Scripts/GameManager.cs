@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private bool gameWon = false;
 
+    private bool gameStop = false;
+
     public int Deaths { get { return deaths; } set { deaths = value; } }
 
     public int Score { get { return score; } set { score = value; } }
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour
     public bool GameStart { get { return gameStart; } set { gameStart = value; } }
 
     public bool GameWon { get { return gameWon; } set { gameWon = value; } }
+
+    public bool GameStop { get { return gameStop; } set { gameStop = value; } }
 
     public float CurrentTimer
     {
@@ -123,6 +127,16 @@ public class GameManager : MonoBehaviour
     {
         gameStart = false;
         menu.OpenWonUI();
+    }
+
+    public void TriggerGameStop()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void TriggerGameContinue()
+    {
+        Time.timeScale = 1;
     }
 
     private void FindMenu()
