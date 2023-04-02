@@ -20,6 +20,6 @@ public class Scoreboard : MonoBehaviour
     {
         textField.text = "TIME: " + GameManager.Instance.CurrentTimer.ToString("f2") +
                         "     ENEMY KIA: " + GameManager.Instance.Score +
-                        "     DEATHS: " + GameManager.Instance.Deaths;
+                        "     ALLY KIA: " + GameManager.Instance.Deaths;
     }
 }
