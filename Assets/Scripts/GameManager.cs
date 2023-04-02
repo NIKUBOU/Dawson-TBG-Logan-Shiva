@@ -126,6 +126,11 @@ public class GameManager : MonoBehaviour
     public void TriggerGameWon()
     {
         gameStart = false;
+        Invoke("OpenWonUI", 2f);
+    }
+
+    private void OpenWonUI()
+    {
         menu.OpenWonUI();
     }
 
