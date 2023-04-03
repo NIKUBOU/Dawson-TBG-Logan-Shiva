@@ -1,4 +1,4 @@
-# Dawson-TBG-Logan-Shiva
+# Dawson-TBG-TrenchWarfare-Logan-Shiva
 --------------
 How to play:
 - WASD to move the camera
